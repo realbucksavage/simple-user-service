@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "generated/users";
+
+package io.sarvika.internal.users;
+
+message GetUserRequest {
+    string UserID = 1;
+}
+
+message User {
+    string UserID = 1;
+    string Name = 2;
+    string Email = 3;
+    bytes Password = 4;
+}
+
+service UserService {
+  rpc GetUser(GetUserRequest) returns (User);
+}
