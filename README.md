@@ -15,8 +15,7 @@ However, the generated code can be imported in your programs like this:
 ```go
 import (
     "fmt"
-
-	"github.com/realbucksavage/simple-user-service/generated/users"
+    "github.com/realbucksavage/simple-user-service/generated/users"
 )
 
 func GetUserByID(id string) {
