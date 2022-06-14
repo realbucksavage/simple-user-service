@@ -45,7 +45,10 @@ func (d *defaultUserService) GetUser(_ context.Context, req *users.GetUserReques
 	}
 
 	sum := md5.Sum(u.Password)
-	u.Password = sum[:]
-
-	return u, nil
+	return &users.User{
+		UserID:   u.UserID,
+		Name:     u.Name,
+		Email:    u.Email,
+		Password: sum[:],
+	}, nil
 }
